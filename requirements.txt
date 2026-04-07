@@ -1,5 +1,6 @@
-crewai
-crewai-tools
+crewai==1.12.2
+crewai-tools==1.12.2
 python-dotenv
 streamlit
 litellm
+tiktoken==0.7.0
