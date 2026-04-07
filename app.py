@@ -171,7 +171,7 @@ hr { border-color: #e2e5f0 !important; }
 
 def check_api_keys():
     required = ['SERPER_API_KEY', 'GROQ_API_KEY']
-    return [v for v in required if not os.getenv(v)]
+    return [v for v in required if not get_secret(v)]
 
 
 def sb_label(text):
