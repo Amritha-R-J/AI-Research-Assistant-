@@ -3,6 +3,11 @@ import textwrap
 from crewai import Task
 from agents.research_specialist import research_specialist_agent
 
+import os
+import streamlit as st
+
+def get_secret(key):
+    return os.getenv(key) or st.secrets.get(key)
 
 research_task = Task(
     agent=research_specialist_agent,
