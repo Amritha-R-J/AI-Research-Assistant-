@@ -9,8 +9,8 @@ def get_secret(key):
     return os.getenv(key) or st.secrets.get(key)
 
 # LLM configurations - Agent specific config
-model = os.getenv("ANALYST_AGENT_LLM")
-temperature = float(os.getenv("ANALYST_AGENT_TEMPERATURE"))
+model = get_secret("ANALYST_AGENT_LLM")
+temperature = float(get_secret("ANALYST_AGENT_TEMPERATURE"))
 
 llm = LLM(
     model=model,
