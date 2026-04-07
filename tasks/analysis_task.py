@@ -4,6 +4,12 @@ from crewai import Task
 from agents.data_analyst import data_analyst_agent
 from tasks.research_task import research_task
 
+import os
+import streamlit as st
+
+def get_secret(key):
+    return os.getenv(key) or st.secrets.get(key)
+
 
 analysis_task = Task(
     agent=data_analyst_agent,
