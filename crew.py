@@ -7,6 +7,11 @@ from tasks.research_task import research_task
 from tasks.analysis_task import analysis_task
 from tasks.writing_task import writing_task
 
+import os
+import streamlit as st
+
+def get_secret(key):
+    return os.getenv(key) or st.secrets.get(key)
 
 research_crew = Crew(
     agents=[
