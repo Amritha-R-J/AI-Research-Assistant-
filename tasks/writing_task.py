@@ -5,6 +5,12 @@ from agents.content_writer import content_writer_agent
 from tasks.analysis_task import analysis_task
 from tasks.research_task import research_task
 
+import os
+import streamlit as st
+
+def get_secret(key):
+    return os.getenv(key) or st.secrets.get(key)
+
 
 writing_task = Task(
     agent=content_writer_agent,
