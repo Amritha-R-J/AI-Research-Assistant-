@@ -3,6 +3,10 @@ load_dotenv()
 
 import streamlit as st
 import os
+
+def get_secret(key):
+    return os.getenv(key) or st.secrets.get(key)
+import os
 import time
 from crew import research_crew
 
