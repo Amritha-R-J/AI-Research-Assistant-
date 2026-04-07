@@ -1,3 +1,9 @@
+import os
+import streamlit as st
+
+def get_secret(key):
+    return os.getenv(key) or st.secrets.get(key)
+    
 from crewai import Crew
 
 from agents.research_specialist import research_specialist_agent
