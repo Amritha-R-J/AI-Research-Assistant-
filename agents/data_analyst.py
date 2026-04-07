@@ -2,6 +2,11 @@ import os
 from crewai import Agent, LLM
 from crewai_tools import FileReadTool
 
+import os
+import streamlit as st
+
+def get_secret(key):
+    return os.getenv(key) or st.secrets.get(key)
 
 # LLM configurations - Agent specific config
 model = os.getenv("ANALYST_AGENT_LLM")
